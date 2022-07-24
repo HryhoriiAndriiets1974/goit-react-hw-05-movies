@@ -5,7 +5,7 @@ export const Gallery = styled.ul`
   flex-basis: calc((100% - 8 * 15px) / 3);
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 16px;
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 0;
   padding: 0;
   list-style: none;
