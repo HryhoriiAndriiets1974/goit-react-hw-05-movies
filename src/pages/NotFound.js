@@ -1,3 +1,11 @@
+import { NotFound404 } from "./NotFound.styled";
+import Header from '../components/Header/Header';
+
 export default function NotFound() {
-  return <h1>404 Page Not Found</h1>;
+  return (
+    <>
+      <Header text='404 Not Found' />
+      <NotFound404 />
+    </>
+  );
 }
