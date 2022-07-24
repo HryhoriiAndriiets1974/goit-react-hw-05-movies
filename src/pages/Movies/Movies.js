@@ -54,36 +54,23 @@ import {
       <Header text='SEARCH MOVIES' />
       <FormSerach searchProps={formSubmit} search={search} />
       {movies && (
-        // <ul>
-        //   {movies.map(movie => (
-        //     <NavLink
-        //       to={`/movie/${movie.id}`}
-        //       state={location}
-        //       key={movie.id}
-        //     >
-        //       <p>{movie.title}</p>
-        //     </NavLink>
-        //   ))
-        //   }
-        // </ul>
-                <Gallery>
-                {movies.map(movie => (
-                  <li key={movie.id}>
-                    <NavLink to={`/movies/${movie.id}`} state={location}>
-                      <Card>
-                        <img
-                          src={`${viewPoster(movie.poster_path)}`}
-                          alt={movie.title}
-                          width="300"
-                          height="450"
-                        />
-                        <Title>{movie.title}</Title>
-                      </Card>
-                    </NavLink>
-                  </li>
-                ))}
-              </Gallery>
-
+        <Gallery>
+          {movies.map(movie => (
+            <li key={movie.id}>
+              <NavLink to={`/movies/${movie.id}`} state={location}>
+                <Card>
+                  <img
+                    src={`${viewPoster(movie.poster_path)}`}
+                    alt={movie.title}
+                    width="300"
+                    height="450"
+                  />
+                  <Title>{movie.title}</Title>
+                </Card>
+              </NavLink>
+            </li>
+          ))}
+        </Gallery>
       )
       }
     </>
