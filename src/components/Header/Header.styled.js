@@ -7,11 +7,12 @@ justify-content: center;
 align-items: center;
 padding: 5px;
 margin-top: 0;
-margin-bottom: 10px;
+margin-bottom: 20px;
 margin-left: auto;
 margin-right: auto;
 border-radius: 10px;
 text-align: center;
+box-shadow: 0 0 10px 1px #7bd4eb;
 background-image: repeating-linear-gradient(
   -45deg,
   #7bd4eb,
