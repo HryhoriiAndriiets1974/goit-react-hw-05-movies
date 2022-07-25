@@ -55,17 +55,17 @@ import {
       <FormSerach searchProps={formSubmit} search={search} />
       {movies && (
         <Gallery>
-          {movies.map(movie => (
-            <li key={movie.id}>
-              <NavLink to={`/movies/${movie.id}`} state={location}>
+          {movies.map(({id, poster_path, title}) => (
+            <li key={id}>
+              <NavLink to={`/movies/${id}`} state={location}>
                 <Card>
                   <img
-                    src={`${viewPoster(movie.poster_path)}`}
-                    alt={movie.title}
+                    src={`${viewPoster(poster_path)}`}
+                    alt={title}
                     width="300"
                     height="450"
                   />
-                  <Title>{movie.title}</Title>
+                  <Title>{title}</Title>
                 </Card>
               </NavLink>
             </li>

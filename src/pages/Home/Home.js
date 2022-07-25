@@ -10,7 +10,7 @@ import {
 
 export default function Home() {
   const location = useLocation();
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState('');
 
   useEffect(() => {
     moviesApi.getTrending().then(response => setMovies(response.results));
@@ -28,17 +28,17 @@ export default function Home() {
       <Header text='TRENDING TODAY' />
       {movies && (
         <Gallery>
-          {movies.map(movie => (
-            <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`} state={location}>
+          {movies.map(({id, poster_path, title}) => (
+            <li key={id}>
+              <Link to={`/movies/${id}`} state={location}>
                 <Card>
                   <img
-                    src={`${viewPoster(movie.poster_path)}`}
-                    alt={movie.title}
+                    src={`${viewPoster(poster_path)}`}
+                    alt={title}
                     width="300"
                     height="450"
                   />
-                  <Title>{movie.title}</Title>
+                  <Title>{title}</Title>
                 </Card>
               </Link>
             </li>

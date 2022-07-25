@@ -18,4 +18,10 @@ export function getMoviesSearch(query) {
   return fetchMovies(
     `${BASE_URL}/search/movie?query=${query}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`
   )
-}
+};
+
+export function getMovieId(movieId) {
+  return fetchMovies(
+    `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`
+  )
+};
