@@ -8,6 +8,8 @@ import {
   CastP,
   CastSpan,
 } from './Cast.styled';
+import defaultImg from '../../components/Images/defaultImg.jpg';
+import {MovieHorizontal} from '../MovieDetails/MovieDetails.styled';
 
 export default function Cast() {
   const [casts, setCasts] = useState(null);
@@ -20,13 +22,14 @@ export default function Cast() {
 
   const viewPoster = profile_path => {
     if (profile_path === null) {
-      return 'https://wipfilms.net/wp-content/data/posters/tt0338683.jpg';
+      return `${defaultImg}`;
     }
     return `https://image.tmdb.org/t/p/w300${profile_path}`;
   };
 
   return (
     <>
+      <MovieHorizontal />
       {casts && (
         <CastGallery>
           {casts.map(({id, profile_path, name, character}) => (

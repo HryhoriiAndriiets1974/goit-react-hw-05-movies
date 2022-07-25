@@ -21,9 +21,10 @@ export const MovieHorizontal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 10px;
   margin-top: 0;
   margin-bottom: 20px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
