@@ -30,7 +30,7 @@ export default function MovieDetails() {
   }, [movieId]);
 
   const movieScore = score => {
-    return score * 10 + '%';
+    return Math.floor(score * 10) + '%';
   };
 
   const movieGanres = genres => {
@@ -55,12 +55,12 @@ export default function MovieDetails() {
     <>
       {movie && (
         <>
+          <Header text={`${movie.title}`} />
           <Batton
             onClick={onBtnClick}
             label={'GO BACK'}
             arrow={<ImArrowLeft size='30' fill='#7bd4eb'/>}
           />
-          <Header text={`${movie.title}`} />
           <MovieCard>
             <img
               src={`${viewPoster(movie.poster_path)}`}

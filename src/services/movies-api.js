@@ -25,3 +25,15 @@ export function getMovieId(movieId) {
     `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`
   )
 };
+
+export function getCast(movieId) {
+  return fetchMovies(
+    `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`
+  )
+};
+
+export function getReviews(movieId) {
+  return fetchMovies(
+    `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&page=1`
+  )
+};
