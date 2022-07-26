@@ -8,6 +8,7 @@ import {
  import {toast} from 'react-toastify';
  import FormSerach from '../../components/SearchForm';
  import Header from '../../components/Header';
+ import FindMe from "components/FindMe";
  import * as movieApi from '../../services/movies-api';
  import {
   Gallery,
@@ -53,7 +54,7 @@ import {
     <>
       <Header text='SEARCH MOVIES' />
       <FormSerach searchProps={formSubmit} search={search} />
-      {movies && (
+      {movies && movies.length > 0 ? (
         <Gallery>
           {movies.map(({id, poster_path, title}) => (
             <li key={id}>
@@ -71,6 +72,8 @@ import {
             </li>
           ))}
         </Gallery>
+      ) : (
+        <FindMe />
       )
       }
     </>

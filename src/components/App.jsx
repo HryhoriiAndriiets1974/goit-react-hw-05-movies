@@ -9,6 +9,7 @@ import SearchMovie from 'pages/Movies/Movies';
 import MovieDetails from 'pages/MovieDetails';
 import Cast from 'pages/Cast';
 import Reviews from 'pages/Reviews';
+import Footer from './Footer/Footer';
 
 export const App = () => {
   return (
@@ -28,6 +29,7 @@ export const App = () => {
         </Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
+      <Footer />
     </Container>
   );
 };
