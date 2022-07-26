@@ -27,4 +27,10 @@ export const FooterIcon = styled(BsGithub)`
   color: #de14b9;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
+  transition: transform var(--animation-duration) var(--timing-function);
+  &:hover {
+    box-shadow: 0 0 13px 3px #de14b9;
+    transform: scale(1.3);
+  }
 `;
