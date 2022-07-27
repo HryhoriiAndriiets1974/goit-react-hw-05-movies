@@ -17,6 +17,7 @@ import {
   MovieH2,
   MovieH3,
 } from './MovieDetails.styled';
+import NotFound from '../NotFound';
 
 export default function MovieDetails() {
   const [movie, setMovie] = useState(null);
@@ -53,7 +54,9 @@ export default function MovieDetails() {
 
   return (
     <>
-      {movie && (
+      {!movie ? (
+        <NotFound />
+      ) : (
         <>
           <Header text={`${movie.title}`} />
           <Batton
